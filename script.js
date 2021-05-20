@@ -26,23 +26,12 @@ var specialCharacters = ['@','%','+','\\','/',"'",'!','#','$','^','?',':',',',')
     var length = parseInt(
       prompt('How many characters would you like your password to contain?')
     );
-  
 
-    // // is NAN = property value represingt NOT-A-Number
-    // // Conditional statement to check if password length is a number. Prompts end if this evaluates false
-    // if (isNaN(length) === true) {
-    //   alert('Password length must be provided as a number');
-    //   return;
-    // }
-  
-    // Conditional statement to check if password length is at least 8 characters long. Prompts end if this evaluates false
     if (length < 8) {
       alert('Password length must be at least 8 characters');
       return;
     }
-  
-    // Conditional statement to check if password length is less than 128 characters long. Prompts end if this evaluates false
-    if (length > 128) {
+    if(length>128) {
       alert('Password length must less than 129 characters');
       return;
     }
@@ -108,13 +97,9 @@ var specialCharacters = ['@','%','+','\\','/',"'",'!','#','$','^','?',':',',',')
   // Function to generate password with user input
   function generatePassword() {
     var options = getPasswordOptions();
-    // Variable to store password as it's being concatenated
+
     var result = [];
-  
-    // Array to store types of characters to include in password
     var possibleCharacters = [];
-  
-    // Array to contain one of each type of chosen character to ensure each will be used
     var guaranteedCharacters = [];
   
     // Conditional statement that adds array of special characters into array of possible characters based on user input
@@ -156,14 +141,9 @@ var specialCharacters = ['@','%','+','\\','/',"'",'!','#','$','^','?',':',',',')
     for (var i = 0; i < guaranteedCharacters.length; i++) {
       result[i] = guaranteedCharacters[i];
     }
-  
-    // Transform the result into a string and pass into writePassword
     return result.join('');
   }
-  
 
-
-  
   // Get references to the #generate element
   var generateBtn = document.querySelector('#generate');
   
